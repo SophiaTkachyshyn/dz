@@ -1,19 +1,36 @@
-#include "Car.h"
+#include "car.h"
 
-Car::Car(const std::string& _brand, float _fuelConsumption) : brand(_brand), fuelConsumption(_fuelConsumption) {}
+Car::Car() : fuel(0) {}
 
-void Car::print() const {
-    std::cout << "Car Brand: " << brand << std::endl;
+Car::Car(const string& brand, double fuel) : Transport(brand), fuel(fuel) {}
+
+Car::Car(const Car& C) : Transport(C.brand), fuel(C.fuel) {}
+
+Car::~Car() {}
+
+Transport* Car::clone() const {
+    return new Car(*this);
 }
 
-float Car::calculateCost() const {
-    return 50.0f * fuelConsumption;
+void Car::printTrans() const {
+    cout << "Car Brand: " << brand << ", Fuel : " << fuel << " liters ";
 }
 
-void Car::readFromStream(std::istream& in) {
-    // Реалізація читання з потоку
+double Car::calculateCost() const {
+    const double fuelCostPerLiter = 1.5;
+    return fuelCostPerLiter * fuel;
 }
 
-std::string Car::getBrand() const {
+void Car::readFrom(istream& is) {
+    is >> brand >> fuel;
+}
+
+
+string Car::getBrand() const {
     return brand;
+}
+
+string Car::getTrans() const
+{
+    return "C";
 }

@@ -1,14 +1,21 @@
 #pragma once
-#include "Transport.h"
+#include "transport.h"
 
 class Car : public Transport {
 private:
-    std::string brand;
-    float fuelConsumption;
+    double fuel;
+
+
 public:
-    Car(const std::string& _brand, float _fuelConsumption);
-    virtual void print() const override;
-    virtual float calculateCost() const override;
-    virtual void readFromStream(std::istream& in) override;
-    std::string getBrand() const;
+    Car();
+    Car(const string& brand, double fuel);
+    Car(const Car& C);
+    virtual ~Car();
+
+    virtual Transport* clone() const override;
+    virtual void printTrans() const override;
+    virtual double calculateCost() const override;
+    void readFrom(istream& is);
+    virtual string getBrand() const override;
+    virtual string getTrans() const override;
 };

@@ -1,15 +1,34 @@
-#include "Plane.h"
+#include "plane.h"
 
-Plane::Plane(const std::string& _airline, float _ticketCost) : airline(_airline), ticketCost(_ticketCost) {}
+Plane::Plane() : ticketPrice(0) {}
 
-void Plane::print() const {
-    std::cout << "Airline: " << airline << std::endl;
+Plane::Plane(const string& brand, double ticketPrice) : Transport(brand), ticketPrice(ticketPrice) {}
+
+Plane::Plane(const Plane& A) : Transport(A.brand), ticketPrice(A.ticketPrice) {}
+
+Plane::~Plane() {}
+
+Transport* Plane::clone() const {
+    return new Plane(*this);
 }
 
-float Plane::calculateCost() const {
-    return ticketCost;
+void Plane::printTrans() const {
+    cout << "Airline: " << brand << ", Ticket Price: " << ticketPrice << " USD";
 }
 
-void Plane::readFromStream(std::istream& in) {
-    // Реалізація читання з потоку
+double Plane::calculateCost() const {
+    return ticketPrice;
+}
+
+void Plane::readFrom(istream& is) {
+    is >> brand >> ticketPrice;
+}
+
+string Plane::getBrand() const {
+    return brand;
+}
+
+string Plane::getTrans() const
+{
+    return "P";
 }

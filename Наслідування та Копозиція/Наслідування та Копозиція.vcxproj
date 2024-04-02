@@ -127,19 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="CarJourney.h" />
-    <ClInclude Include="Journey.h" />
-    <ClInclude Include="Plane.h" />
-    <ClInclude Include="SeaHoliday.h" />
-    <ClInclude Include="Transport.h" />
+    <ClInclude Include="car.h" />
+    <ClInclude Include="carContainer.h" />
+    <ClInclude Include="carVacation.h" />
+    <ClInclude Include="plane.h" />
+    <ClInclude Include="planeContainer.h" />
+    <ClInclude Include="seaVacation.h" />
+    <ClInclude Include="travel.h" />
+    <ClInclude Include="transport.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Car.cpp" />
-    <ClCompile Include="CarJourney.cpp" />
+    <ClCompile Include="car.cpp" />
+    <ClCompile Include="carContainer.cpp" />
+    <ClCompile Include="carVacation.cpp" />
+    <ClCompile Include="plane.cpp" />
+    <ClCompile Include="planeContainer.cpp" />
+    <ClCompile Include="seaVacation.cpp" />
+    <ClCompile Include="travel.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Plane.cpp" />
-    <ClCompile Include="SeaHoliday.cpp" />
+    <ClCompile Include="transport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="file.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

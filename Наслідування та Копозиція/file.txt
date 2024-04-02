@@ -1,0 +1,6 @@
+5
+Car BMW Kyev 50 500
+Plane Mriya London 500 7
+Plane EA Texas 900 10
+Car Audi Lviv 80 1000
+Car Mercedes Krakow 150 2000
